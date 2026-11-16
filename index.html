@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"  dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet"  href="style.css">
+        <script src="app.js" defer></script>
+        <title>minishop.</title>
+    </head>
+    <body>
+        <header clas="header" >
+            <div class="logo">
+                <span>minishop</span>
+            </div>
+            <div class="my-cart"  onclick="scrollToCart()">
+                🛍️ My Cart
+                <span id="my-cart-count">0</span>
+            </div>
+        </header>
+        <main class="shop-content">
+            <section class="products-section">
+                <div class="section-head">
+                    <div>
+                        <p class="title">CURATED FOR YOU</p>
+                        <h1>Shop the collection</h1>
+                    </div>
+                    <span class="number-of-products">04 products</span>
+                </div>
+                <div class="products-list">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="C:\Users\ASUS\Desktop\minishop\images\headphone.jpg">
+                            <span class="product-label">POPULAR</span>
+                        </div>
+                        <div class="product-info">
+                           <p class="category">AUDIO</p>
+                           <h2>wireless Headphones</h2>
+                           <p class="description">Rich sound,all day comfort</p>
+                          <div class="product-button">
+                            <span class="product-price">$50</span>
+                            <button onclick="addtocart(1)">+Add to Cart</button>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="C:\Users\ASUS\Desktop\minishop\images\sneaker.jpg">
+                            <span class="product-label">NEW</span>
+                        </div>
+                        <div class="product-info">
+                            <p class="category">FOOTWEAR</p>
+                            <h2>Everyday Sneakers</h2>
+                            <p class="descrption">Fresh steps,effortless style</p>
+                        </div>
+                        <div class="product-button">
+                            <span class="product-price">$80</span>
+                            <button onclick="addtocart(2)">+Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="C:\Users\ASUS\Desktop\minishop\images\watch_cream.png">
+                        </div>
+                        <div class="product-info">
+                            <p class="category">ACCESSORIES</p>
+                            <h2>Classic wristwatch</h2>
+                            <p class="description">Timeless looks for every day.</p>
+                        </div>
+                        <div class="product-button">
+                            <span class="product-price">$120</span>
+                            <button onclick="addtocart(3)">+Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="C:\Users\ASUS\Desktop\minishop\images\backpack_cream.png">
+                        </div>
+                        <div class="product-info">
+                            <p class="category">LIFESTYLE</p>
+                            <h2>Urban Backpack</h2>
+                            <p class="description">Made for wherever you go</p>
+                        </div>
+                        <div class="product-button">
+                            <span class="product-price">$36</span>
+                            <button onclick="addtocart(4)">+Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="shopping-cart"  id="shoppingcart">
+                <div class="cart-heading">
+                    <div>
+                        <p class="title">YOUR PICKS</p>
+                        <h2>Shopping cart</h2>
+                        <span id="cartcount">0</span>
+                    </div>
+                    <button class="clear-button"  onclick="clearcart()">Clear all</button>
+                </div>
+                <div id="cartitems">
+                    <div class="empty-cart">🛒</div>
+                    <p>Your cart is empty. Add something you love!</p>
+                </div>
+                <div class="Subtotal">
+                    <span>Subtotal</span>
+                    <strong id="Subtotal">$0</strong>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="logo">
+                <span>minishop.</span>
+            </div>
+        </footer>
+    </body>
+</html>
