@@ -21,6 +21,71 @@ function scrollToCart() {
   shoppingCart.scrollIntoView({ behavior: "smooth" });
 }
 
+
+
+const productCards = document.querySelectorAll(".product-card");
+
+productCards.forEach((card, index) => {
+  const id = index + 1;
+  const productButton = card.querySelector(".product-button");
+  const addButton = productButton.querySelector("button");
+
+  addButton.onclick = () => {
+    addtocart(id);
+
+    let quantity = 1;
+
+    const quantityBox = document.createElement("div");
+    quantityBox.className = "quantity";
+
+    quantityBox.innerHTML = `
+      <button type="button" class="minus">−</button>
+      <span class="qty-number">1</span>
+      <button type="button" class="plus">+</button>
+    `;
+
+    addButton.replaceWith(quantityBox);
+
+    const display = quantityBox.querySelector(".qty-number");
+
+    quantityBox.querySelector(".plus").onclick = () => {
+      quantity++;
+      display.textContent = quantity;
+      updateCartQuantity(id, quantity);
+    };
+
+    quantityBox.querySelector(".minus").onclick = () => {
+      quantity--;
+
+      if (quantity <= 0) {
+        removeFromCart(id);
+        quantityBox.replaceWith(addButton);
+        addButton.onclick = () => {
+          quantity = 1;
+          addtocart(id);
+          addButton.replaceWith(quantityBox);
+          display.textContent = 1;
+        };
+        return;
+      }
+
+      display.textContent = quantity;
+      updateCartQuantity(id, quantity);
+    };
+  };
+});
+
+function updateCartQuantity(id, quantity) {
+  const item = cart.find(item => item.id === id);
+
+  if (item) {
+    item.quantity = quantity;
+    updateCart();
+  }
+}
+
+
+
 function addtocart(id) {
 
   let found = false;
