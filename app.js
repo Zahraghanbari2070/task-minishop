@@ -181,7 +181,7 @@ function updateCart() {
   }
 
 
-  myCartCount.textContent = totalCount;
+  myCartCount.textContent = cart.length;
   cartCount.textContent = totalCount;
   subtotal.textContent = `$${totalPrice}`;
 }
